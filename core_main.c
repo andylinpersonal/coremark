@@ -436,6 +436,8 @@ for (i = 0; i < MULTITHREAD; i++)
         portable_free(results[i].memblock[0]);
 #endif
     /* And last call any target specific code for finalizing */
+    results[0].port.total_time = total_time;
+    results[0].port.iterations = results[0].iterations;
     portable_fini(&(results[0].port));
 
     return MAIN_RETURN_VAL;
